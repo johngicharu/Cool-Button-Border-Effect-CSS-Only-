@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #262626;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80px;
+    width: 160px;
+    overflow: hidden;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    height: 76px; width: 156px;
+    background-color: #333;
+    color: #f4f4f4;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    transition: all 500ms ease-in-out;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 50%;
+    background-color: #fbb4c1;
+    transform: translateX(200%);
+    transition: all 500ms ease-in-out;
+}
+
+.container:hover button::after {
+    transform: translateX(-150%);
+}
+
+.container:hover button {
+    color: #fbb4c1;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+
+span {
+    position: absolute;
+    background-color: #f4f4f4;
+    display: block;
+    transition: all 500ms ease-in-out;
+}
+
+span:nth-child(odd) {
+    height: 2px;
+    width: 100%;
+}
+
+span:nth-child(even) {
+    height: 100%;
+    width: 2px;
+}
+
+span:nth-child(5) {
+    bottom: 0;
+    left: -50%;
+}
+span:nth-child(2) {
+    top: -20%;
+    right: 0;
+}
+span:nth-child(3) {
+    top: 0;
+    right: -50%;
+}
+span:nth-child(4) {
+    bottom: -20%;
+    left: 0;
+}
+
+/*Hover Effects*/
+.container:hover span:nth-child(5) {
+    transform: translateX(100%);
+}
+.container:hover span:nth-child(2) {
+    transform: translateY(-100%);
+}
+.container:hover span:nth-child(3) {
+    transform: translateX(-100%);
+}
+.container:hover span:nth-child(4) {
+    transform: translateY(100%);
+}
